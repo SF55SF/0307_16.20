@@ -1,0 +1,148 @@
+---
+import type { Office } from '../data/offices';
+
+const { office, index } = Astro.props as { office: Office; index: number };
+const imageNumber = index + 1;
+
+const planImage = `/images/office-${imageNumber}-plan.jpg`;
+
+const galleryImages = [
+  `/images/office-${imageNumber}-photo-1.jpg`,
+  `/images/office-${imageNumber}-photo-2.jpg`,
+  `/images/office-${imageNumber}-photo-3.jpg`,
+];
+---
+
+<article class="office-card" id={`office-${imageNumber}`}>
+  <div class="office-card-content">
+    <p class="eyebrow">Вариант {imageNumber}</p>
+
+    <h3>{office.title}</h3>
+
+    <ul class="feature-list">
+      {office.features.map((feature) => <li>{feature}</li>)}
+    </ul>
+
+    <div class="card-actions">
+      <a class="button button-dark" href={office.presentationFile}>
+        Презентация
+      </a>
+
+      <a
+        class="button"
+        href={
+          imageNumber === 1
+            ? '/office-1674m2-trilliant'
+            : imageNumber === 2
+              ? '/office-128m2-trilliant'
+              : '/office-206m2-trilliant'
+        }
+      >
+        Подробнее
+      </a>
+    </div>
+  </div>
+
+  <div class="plan-placeholder">
+    <button
+      class="image-open-button"
+      type="button"
+      data-lightbox-src={planImage}
+      data-lightbox-alt={`Планировка / фото офиса ${imageNumber}`}
+      aria-label={`Открыть планировку офиса ${imageNumber}`}
+    >
+      <img
+        src={planImage}
+        alt={`Планировка / фото офиса ${imageNumber}`}
+      />
+    </button>
+  </div>
+
+  <div class="mini-gallery" aria-label={`Галерея помещения ${imageNumber}`}>
+    {galleryImages.map((image, photoIndex) => (
+      <div class="gallery-item">
+        <button
+          class="image-open-button"
+          type="button"
+          data-lightbox-src={image}
+          data-lightbox-alt={`Фото ${photoIndex + 1} офиса ${imageNumber}`}
+          aria-label={`Открыть фото ${photoIndex + 1} офиса ${imageNumber}`}
+        >
+          <img
+            src={image}
+            alt={`Фото ${photoIndex + 1} офиса ${imageNumber}`}
+          />
+        </button>
+      </div>
+    ))}
+  </div>
+</article>
+
+<script>
+  function createLightbox() {
+    let lightbox = document.querySelector('.image-lightbox');
+
+    if (lightbox) {
+      return lightbox;
+    }
+
+    lightbox = document.createElement('dialog');
+    lightbox.className = 'image-lightbox';
+    lightbox.setAttribute('aria-label', 'Просмотр изображения');
+
+    lightbox.innerHTML = `
+      <button class="image-lightbox-close" type="button" aria-label="Закрыть">
+        ×
+      </button>
+      <img class="image-lightbox-img" src="" alt="" />
+    `;
+
+    document.body.appendChild(lightbox);
+
+    const closeButton = lightbox.querySelector('.image-lightbox-close');
+
+    closeButton?.addEventListener('click', () => {
+      lightbox.close();
+    });
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) {
+        lightbox.close();
+      }
+    });
+
+    lightbox.addEventListener('close', () => {
+      document.body.classList.remove('lightbox-open');
+    });
+
+    return lightbox;
+  }
+
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('.image-open-button');
+
+    if (!button) {
+      return;
+    }
+
+    const imageSrc = button.getAttribute('data-lightbox-src');
+    const imageAlt = button.getAttribute('data-lightbox-alt') || '';
+
+    if (!imageSrc) {
+      return;
+    }
+
+    const lightbox = createLightbox();
+    const lightboxImg = lightbox.querySelector('.image-lightbox-img');
+
+    if (!lightboxImg) {
+      return;
+    }
+
+    lightboxImg.src = imageSrc;
+    lightboxImg.alt = imageAlt;
+
+    lightbox.showModal();
+    document.body.classList.add('lightbox-open');
+  });
+</script>

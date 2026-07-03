@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Офис 128 м² в аренду в БЦ Trilliant, Ташкент"
+  description="Аренда готового офиса 128 м² с ремонтом и мебелью в бизнес-центре Trilliant на улице Шахрисабз, 2 в Ташкенте."
+  canonical="https://www.trilliant.uz/office-128m2-trilliant"
+  image="https://www.trilliant.uz/images/office-2-photo-1.jpg"
+>
+  <Header />
+
+  <main>
+    <section class="section office-detail-page">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Офис 128 м²</p>
+          <h1 class="office-detail-title">
+            Готовый офис 128 м² в БЦ Trilliant
+          </h1>
+
+          <p>
+            В аренду предлагается готовый офис площадью 128 м² в бизнес-центре
+            Trilliant на улице Шахрисабз, 2. Помещение подходит для команды
+            до 20 человек.
+          </p>
+
+          <ul class="feature-list">
+            <li>Площадь: 128 м²</li>
+            <li>Готовый ремонт</li>
+            <li>Мебель</li>
+            <li>Open-space</li>
+            <li>Переговорная</li>
+            <li>Кухня</li>
+            <li>Бизнес-центр класса А</li>
+          </ul>
+
+          <div class="card-actions">
+            <a class="button button-dark" href="/#contacts">
+              Получить предложение
+            </a>
+            <a class="button" href="/">
+              Все офисы
+            </a>
+          </div>
+        </div>
+
+        <div class="plan-placeholder">
+          <img
+            src="/images/office-2-photo-1.jpg"
+            alt="Готовый офис 128 м² с мебелью в бизнес-центре Trilliant, Ташкент"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Фото офиса</p>
+        <h2>Галерея офиса 128 м²</h2>
+
+        <div class="mini-gallery">
+          <div>
+            <img src="/images/office-2-photo-1.jpg" alt="Рабочая зона офиса 128 м² в БЦ Trilliant" />
+          </div>
+          <div>
+            <img src="/images/office-2-photo-2.jpg" alt="Интерьер готового офиса 128 м² в Trilliant" />
+          </div>
+          <div>
+            <img src="/images/office-2-photo-3.jpg" alt="Фото офиса 128 м² с ремонтом и мебелью в Ташкенте" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+
+  <Footer />
+</BaseLayout>

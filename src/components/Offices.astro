@@ -1,0 +1,13 @@
+---
+import { offices } from '../data/offices';
+import OfficesTable from './OfficesTable.astro';
+import OfficeCard from './OfficeCard.astro';
+---
+
+<OfficesTable offices={offices} />
+
+<section class="section section-muted">
+  <div class="container office-list">
+    {offices.map((office, index) => <OfficeCard office={office} index={index} />)}
+  </div>
+</section>

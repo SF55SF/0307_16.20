@@ -1,0 +1,24 @@
+---
+const {
+  title = 'Бизнес центр Trilliant — готовые офисы с ремонтом в аренду в Ташкенте',
+  description = 'Аренда готовых офисов с ремонтом и мебелью в бизнес-центре Trilliant класса А на улице Шахрисабз, 2 в Ташкенте.',
+  canonical = 'https://www.trilliant.uz/',
+  image = 'https://www.trilliant.uz/images/hero-bg.jpg',
+} = Astro.props;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content="Trilliant" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />

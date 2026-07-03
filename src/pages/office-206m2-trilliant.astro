@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Офис 206 м² в аренду в БЦ Trilliant, Ташкент"
+  description="Готовый офис 206 м² с ремонтом и мебелью в бизнес-центре Trilliant. Адрес: улица Шахрисабз, 2, Ташкент."
+  canonical="https://www.trilliant.uz/office-206m2-trilliant"
+  image="https://www.trilliant.uz/images/office-3-photo-1.jpg"
+>
+  <Header />
+
+  <main>
+    <section class="section office-detail-page">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Офис 206 м²</p>
+          <h1 class="office-detail-title">
+            Готовый офис 206 м² в БЦ Trilliant
+          </h1>
+
+          <p>
+            Офис площадью 206 м² в бизнес-центре Trilliant подойдёт для средней
+            компании, которой нужен представительский офис в центре Ташкента.
+          </p>
+
+          <ul class="feature-list">
+            <li>Площадь: 206 м²</li>
+            <li>Готовый ремонт</li>
+            <li>Мебель</li>
+            <li>Рабочие зоны</li>
+            <li>Переговорные пространства</li>
+            <li>Современная инфраструктура</li>
+            <li>Бизнес-центр класса А</li>
+          </ul>
+
+          <div class="card-actions">
+            <a class="button button-dark" href="/#contacts">
+              Получить предложение
+            </a>
+            <a class="button" href="/">
+              Все офисы
+            </a>
+          </div>
+        </div>
+
+        <div class="plan-placeholder">
+          <img
+            src="/images/office-3-photo-1.jpg"
+            alt="Готовый офис 206 м² в бизнес-центре Trilliant, Ташкент"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Фото офиса</p>
+        <h2>Галерея офиса 206 м²</h2>
+
+        <div class="mini-gallery">
+          <div>
+            <img src="/images/office-3-photo-1.jpg" alt="Рабочая зона офиса 206 м² в БЦ Trilliant" />
+          </div>
+          <div>
+            <img src="/images/office-3-photo-2.jpg" alt="Интерьер офиса 206 м² с ремонтом и мебелью" />
+          </div>
+          <div>
+            <img src="/images/office-3-photo-3.jpg" alt="Фото готового офиса 206 м² в Ташкенте" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+
+  <Footer />
+</BaseLayout>

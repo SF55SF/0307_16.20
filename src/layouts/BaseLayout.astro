@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import Seo from '../components/Seo.astro';
+
+const {
+  title = 'Бизнес центр Trilliant — аренда готовых офисов класса А в Ташкенте',
+  description = 'Готовые офисы с ремонтом и мебелью в бизнес-центре Trilliant на улице Шахрисабз, 2 в Ташкенте.',
+  canonical = 'https://www.trilliant.uz/',
+  image = 'https://www.trilliant.uz/images/hero-bg.jpg',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <Seo
+      title={title}
+      description={description}
+      canonical={canonical}
+      image={image}
+    />
+
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Бизнес центр Trilliant",
+  "url": "https://www.trilliant.uz/",
+  "image": "https://www.trilliant.uz/images/hero-bg.jpg",
+  "telephone": "+998505906059",
+  "email": "Sanjar.Saimatov@CMWP.uz",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "улица Шахрисабз, 2",
+    "addressLocality": "Ташкент",
+    "addressCountry": "UZ"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Ташкент"
+  },
+  "description": "Готовые офисы с ремонтом и мебелью в аренду в бизнес-центре Trilliant класса А в центре Ташкента."
+})} />

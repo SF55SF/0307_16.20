@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Офис 1674 м² в аренду в БЦ Trilliant, Ташкент"
+  description="Аренда крупного офиса 1674 м² в бизнес-центре Trilliant класса А на улице Шахрисабз, 2. Подходит для головного офиса компании."
+  canonical="https://www.trilliant.uz/office-1674m2-trilliant"
+  image="https://www.trilliant.uz/images/office-1-photo-1.jpg"
+>
+  <Header />
+
+  <main>
+    <section class="section office-detail-page">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Офис 1674 м²</p>
+          <h1 class="office-detail-title">
+            Крупный офис 1674 м² в БЦ Trilliant
+          </h1>
+
+          <p>
+            В аренду предлагается просторный офис площадью 1674 м² в
+            бизнес-центре Trilliant. Вариант подходит для крупной компании,
+            головного офиса или представительского пространства.
+          </p>
+
+          <ul class="feature-list">
+            <li>Площадь: 1674 м²</li>
+            <li>Большое офисное пространство</li>
+            <li>Готовая инфраструктура</li>
+            <li>Подходит для крупной команды</li>
+            <li>Бизнес-центр класса А</li>
+            <li>Центральная локация</li>
+            <li>Адрес: улица Шахрисабз, 2</li>
+          </ul>
+
+          <div class="card-actions">
+            <a class="button button-dark" href="/#contacts">
+              Получить предложение
+            </a>
+            <a class="button" href="/">
+              Все офисы
+            </a>
+          </div>
+        </div>
+
+        <div class="plan-placeholder">
+          <img
+            src="/images/office-1-photo-1.jpg"
+            alt="Большой офис 1674 м² в бизнес-центре Trilliant, Ташкент"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Фото офиса</p>
+        <h2>Галерея офиса 1674 м²</h2>
+
+        <div class="mini-gallery">
+          <div>
+            <img src="/images/office-1-photo-1.jpg" alt="Рабочее пространство офиса 1674 м² в БЦ Trilliant" />
+          </div>
+          <div>
+            <img src="/images/office-1-photo-2.jpg" alt="Интерьер большого офиса 1674 м² в Trilliant" />
+          </div>
+          <div>
+            <img src="/images/office-1-photo-3.jpg" alt="Фото офиса 1674 м² для крупной компании в Ташкенте" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+
+  <Footer />
+</BaseLayout>
